@@ -1,0 +1,29 @@
+# notorically often used mkshrc by Lars Schotte
+#
+# we do not want to overwrite stuff without being prompted for it
+alias cp='cp -ip'
+alias mv='mv -i'
+alias rm='rm -i'
+#
+# we also do not want to have wrong locale set (in case login_conf fails)
+# and sometimes we do not want the defaults anyway, OK?
+#
+# ctype should only be important for character type, so UTF-8 basically anything
+LC_CTYPE="en_GB.UTF-8"
+# here we do not want to confuse databases like PostgreSQL
+LC_COLLATE="C"
+# well, we display time in english anyway
+LC_TIME="en_GB.UTF-8"
+# since the british use metric system now as well, should not be a problem too
+LC_NUMERIC="en_GB.UTF-8"
+# here we have EURO
+LC_MONETARY="de_DE.UTF-8"
+# yes, this is a no brainer, messages in english anyway
+LC_MESSAGES="en_GB.UTF-8"
+#
+# The biggest issue here is how PS1 looks, this can be complicated
+# first we need to set HOSTNAME, because we do not have that per default
+HOSTNAME=`hostname -s`
+# and then this does not check if we are root or not, so only use this for users.
+PS1="[\$USER@$HOSTNAME:\$PWD]$ "
+# that can be left that way since we do not ever want to change root shell, use sudo instead!
