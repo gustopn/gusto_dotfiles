@@ -1,9 +1,10 @@
 #!/usr/local/bin/mksh -x
 
 replace_if_different() {
-  if [ ! -e "$2" ] {
+  if [ ! -e "$2" ]
+  then \
     touch "$2"
-  }
+  fi
   if [ `stat -f %i $1` -ne `stat -f %i $2` ]
   then \
     if cmp $1 $2 >/dev/null 2>&1
