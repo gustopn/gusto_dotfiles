@@ -15,7 +15,7 @@ MaxAuthTries 2
 MaxSessions 2
 
 # only a member of a group may SSH
-AllowGroups raya
+AllowGroups raya recovery
 
 # we do not use passwords for (jail) users
 AuthenticationMethods publickey

@@ -21,3 +21,8 @@ chmod 0640 /etc/ssh/sshd_config*
   (OpenVPN + gif tunnel to a different *secured* system).
 
 - Now even *Microsoft* (Azure) does __NOT__ recommend having SSH port on the Internet.
+
+
+We are using *raya* group *(but you may name it whatever you want)* for allowing users to log in.<br>
+Remember that for host systems you need at least 2 users in that group.<br>
+Best add one user into *recovery* group who does __NOT__ use a shell from ports.
