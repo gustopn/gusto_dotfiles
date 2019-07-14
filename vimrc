@@ -12,6 +12,6 @@ set nu
 set background=dark
 " yes, and then not to forget setting the syntax, even though the colors are sometimes wrong (should be fixed someday by a different theme)
 syntax enable
-
+" we do not want tabs to interfere
 set tabstop=2
 set expandtab

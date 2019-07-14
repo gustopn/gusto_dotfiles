@@ -1,0 +1,25 @@
+# jail sshd config file
+# 2019 by Lars Schotte
+# use sshd_flags="-f /etc/ssh/sshd_config.local" to enable
+
+# jail IPv4 addrs are not global (rfc1918), 
+# we are staying inside (no Internet to SSH)
+AddressFamily inet
+
+# we NEVER do ROOToverSSH (sudo instead)
+PermitRootLogin no
+
+# no idea, but does not sound bad
+StrictModes yes
+MaxAuthTries 2
+MaxSessions 2
+
+# only a member of a group may SSH
+AllowGroups raya
+
+# we do not use passwords for (jail) users
+AuthenticationMethods publickey
+
+# FreeBSD (12) defaults
+AuthorizedKeysFile	.ssh/authorized_keys
+Subsystem	sftp	/usr/libexec/sftp-server
